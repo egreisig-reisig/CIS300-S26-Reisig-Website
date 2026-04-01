@@ -1,53 +1,168 @@
-.hero {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: url(images/bokeh.gif);
+* {
+    box-sizing: border-box;
+}
+body{
+    background-image: url(images/bokeh.gif);
     background-size: cover;
-    background-position: center;
+    background-repeat: no-repeat;
+    height: 115vh;
+    padding:0;
+    margin: 0;
+    color: #f5e6dc;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 150%;
+    margin: 0;
+    padding: 0;
 }
-.hero-card {
-    display: flex;
-    gap: 30px;
-    padding: 30px 40px;
+header{
+    background-color: #68272d;
+    background-image: url(images/emma_logo.png);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 35%;
 }
-.sidebar {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top:0;
-    left: 0;
-    background-color: #3e181b;
-    overflow-x: hidden;
-    padding-top: 60px;
-    transition:0.5s;
-}
-.sidebar a {
-    padding: 8px 8px 8px 32px;
+header a{
     text-decoration: none;
-    font-size: 25px;
-    color: #eeebcb;
-    display: block;
-    transition: 0.3s;
 }
-.sidebar a:hover {
+header a:link{
+    color: #FFFFFF;
+}
+header a:visited{
     color: #cb5b3b;
 }
-
-.sidebar .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
+header a:hover{
+    color: #FFFFFF;
 }
-.openbtn {
-  font-size: 20px;
-  cursor: pointer;
+nav{
   background-color: #3e181b;
-  color: #eeebcb;
-  padding: 10px 15px;
-  border: none;
+    font-size: 120%;
+    font-weight: bold;
+    padding: 1.5em;
+    text-align: center;
+    width: 20%;
+    height: 100%;
+    right: 0;
+    position: fixed;
+}
+nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding-left: 0;
+    font-size: 1.2em;
+}
+nav li{
+    border-bottom: 1px solid #ffffff;
+}
+nav a{
+    text-decoration: none;
+}
+nav a:link{
+    color: #ffffff;
+}
+nav a:visited{
+    color: #cb5b3b;
+}
+nav a:hover{
+    color: #A52A2A;
+}
+
+main{
+    background-color: #68272d;
+    padding: 20px 20px 20px 20%;
+    border-radius: 25px;
+    width: 75%;
+    height: 100%;
+    
+}
+
+.profile{
+    background-image: url(images/face.png);
+    background-repeat: no-repeat;
+    background-position: left;
+    margin-right: 40%;
+    margin-top: -7%;
+    background-size: contain;
+    height: 300px;  
+}
+
+.welcome{
+    font-size: 300%;
+}
+
+.underline{
+    border-bottom: 2px solid #f5e6dc;
+    width: 100%;
+    margin: 1em 0;
+}
+
+footer{
+    font-size: 90%;
+    font-style: italic;
+    text-align: left;
+     padding: 1em;
+     padding-top: 13em;
+}
+
+#homehero{
+    padding:0;
+    margin: 0;
+    height: 100px;
+    background-size: 100% 100%;
+}
+
+@media (min-width: 600px){
+    nav ul{
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+    }
+    nav li{
+        border-bottom: none;
+    }
+    section{
+        margin-left: 2em;
+        margin-right: 2em;
+        flex: 1;
+    }
+    form {
+        display: grid;
+        grid-template-columns: 6em 1fr;
+        grid-template-rows: auto;
+        grid-gap: 1em;
+        max-width: 30em;
+    }
+    #submit {
+        grid-column: 2/3;
+        width: 9em;
+    }
+    .flow{
+        display: flex;
+        flex-direction: row;
+    }
+}
+@media (min-width: 1024px){
+    nav{
+        text-align: center;
+        padding-right: 2em;
+    }
+    @supports (display: grid){
+        nav ul{
+            flex-direction: column
+        }
+        header{grid-area: header;}
+        nav{grid-area: nav;}
+        .hero{grid-area: hero;}
+        main{grid-area: main;}
+        footer{grid-area: footer;}
+        #wrapper{
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            grid-template-rows: 100px auto 50px;
+            grid-template:
+                        "header header" 100px
+                        "nav hero" auto
+                        "nav main" auto
+                        "nav footer" 50px;
+        }
+    }
 }
