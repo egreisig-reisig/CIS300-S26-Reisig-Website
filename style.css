@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 body{
-    background-image: url(images/bokeh.gif);
+    background-image: url(bokeh.gif);
     background-size: cover;
     background-repeat: no-repeat;
     height: 115vh;
@@ -16,7 +16,7 @@ body{
 }
 header{
     background-color: #68272d;
-    background-image: url(images/emma_logo.png);
+    background-image: url(emma_logo.png);
     background-repeat: no-repeat;
     background-position: left;
     background-size: 35%;
@@ -76,7 +76,7 @@ main{
 }
 
 .profile{
-    background-image: url(images/face.png);
+    background-image: url(face.png);
     background-repeat: no-repeat;
     background-position: left;
     margin-right: 40%;
