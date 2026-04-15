@@ -2,17 +2,19 @@
     box-sizing: border-box;
 }
 body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     background-image: url(bokeh.gif);
     background-size: cover;
-    background-repeat: no-repeat;
-    height: 215vh;
-    padding:0;
+    background-repeat: repeat-y;
+    background-attachment: fixed;
+    height: 100%;
+    width: 100%;
+    padding: 0;
     margin: 0;
     color: #f5e6dc;
     font-family: 'Segoe UI', sans-serif;
-    font-size: 150%;
-    margin: 0;
-    padding: 0;
 }
 header{
     background-color: #68272d;
@@ -20,22 +22,17 @@ header{
     background-repeat: no-repeat;
     background-position: left;
     background-size: 35%;
+    padding: 2em;
 }
 header a{
     text-decoration: none;
 }
-header a:link{
-    color: #FFFFFF;
-}
-header a:visited{
-    color: #cb5b3b;
-}
 header a:hover{
-    color: #FFFFFF;
+    transform: scale (1.1);
 }
 nav{
-  background-color: #3e181b;
-    font-size: 120%;
+    background-color: #3e181b;
+    font-size: 3vw;
     font-weight: bold;
     padding: 1.5em;
     text-align: center;
@@ -43,64 +40,129 @@ nav{
     height: 100%;
     right: 0;
     position: fixed;
+    overflow: auto;
+    z-index: 1;
 }
 nav ul{
     list-style-type: none;
     margin: 0;
     padding-left: 0;
-    font-size: 1.2em;
+    font-size: 3vw;
+    font-family: 'garamond', serif;
+    line-height: 2em;
 }
 nav li{
     border-bottom: 1px solid #ffffff;
 }
+nav li.selected{
+    color:#cb5b3b;
+}
 nav a{
     text-decoration: none;
+    color: #f5e6dc;
 }
-nav a:link{
-    color: #ffffff;
-}
-nav a:visited{
-    color: #cb5b3b;
-}
-nav a:hover{
+nav a:hover:not(:active){
     color: #A52A2A;
+    transition: ease-in-out 0.5s;
 }
 
-main{
+#rectangle {
     background-color: #68272d;
-    padding: 20px 20px 20px 20%;
+    position: center relative;
+    inset: 0;
+    width: fit-content;
+    height: fit-content;
+    margin: auto 23% auto 10%;
+    padding: 2em;
     border-radius: 25px;
+}
+#imgrectangle1 {
+    background-color: #3e181b;
+    background: rgba(62, 24, 27, 0.8);
+    position: sticky;
     width: 75%;
-    height: 100%;
-    
+    height: fit-content;
+    margin-left: 6em;
+    padding: 3em;
+    border-radius: 25px;
+    z-index: -1;
 }
-
+#imgrectangle2 {
+    background-color: #3e181b;
+    background: rgba(62, 24, 27, 0.8);
+    position: sticky;
+    width: 75%;
+    height: fit-content;
+    margin-left: 6em;
+    padding: 3em;
+    border-radius: 25px;
+    margin-top: 2em;
+    z-index: -1;
+}
 .profile{
-    background-image: url(face.png);
-    background-repeat: no-repeat;
-    background-position: left;
-    margin-right: 40%;
-    margin-top: -7%;
-    background-size: contain;
-    height: 300px;  
+   position: absolute;
+    top: 33%;
+    bottom: 0;
+    left: 1%;
+    width: 22%;
 }
-
 .welcome{
-    font-size: 300%;
+    font-size: 5vw;
+    text-align: center;
+    font-family: 'Cooper', cursive;
+    position: center;
 }
-
 .underline{
-    border-bottom: 2px solid #f5e6dc;
-    width: 100%;
-    margin: 1em 0;
+    border: none;
+    border-bottom: 4px dotted #f5e6dc;
+    width: calc(100% - 150px);
+    margin: 0em 0em 1em 9em;
 }
-
+.headlines{
+    font-size: 2vw;
+    text-align: left;
+    font-family: 'Cooper', cursive;
+    padding-left: 40%;
+    padding-right: 7%;
+}
+.regtext{
+    font-size: 2.2vw;
+    text-align: center;
+    font-family: 'Merriweather', serif;
+    padding-left: 20%;
+}
+.description{
+    font-size: 1.5vw;
+    text-align: left;
+    font-family: 'Merriweather', serif;
+    padding-left: 40%;
+    padding-right: 7%;
+}
+.propulsion{
+    position: absolute;
+    display: flex;
+    top: 19%;
+    left: 5em;
+    width: 31%;
+    height: auto;
+}
+.dovevid{
+    position: absolute;
+    top: 63dvh;
+    max-inline-size: 25%;
+    left: 7em;
+    width: 25%;
+    height: auto;
+}
 footer{
-    font-size: 90%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    font-size: 70%;
     font-style: italic;
     text-align: left;
-     padding: 1em;
-     padding-top: 13em;
+    padding: 1rem;
 }
 
 #homehero{
