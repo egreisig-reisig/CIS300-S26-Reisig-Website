@@ -112,6 +112,12 @@ nav a:hover:not(:active){
     font-family: 'Cooper', cursive;
     position: center;
 }
+.contactme{
+    font-size: 3vw;
+    text-align: center;
+    font-family: 'Cooper', cursive;
+    margin: auto;
+}
 .underline{
     border: none;
     border-bottom: 4px dotted #f5e6dc;
@@ -192,6 +198,7 @@ footer{
         grid-template-rows: auto;
         grid-gap: 1em;
         max-width: 30em;
+        margin-left: 4em;
     }
     #submit {
         grid-column: 2/3;
